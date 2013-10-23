@@ -8,6 +8,7 @@ $(document).ready(function(){
       var name = $('#nameInput').val();
       var text = $('#messageInput').val();
       messagesRef.push({name:name, text:text});
+      
       $('#messageInput').val('');
     }
   });
@@ -18,5 +19,6 @@ $(document).ready(function(){
     $('<div/>').text(message.text).prepend($('<em/>')
       .text(message.name+': ')).appendTo($('#messagesDiv'));
     $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+    $.playSound('beep.mp3');
   });
 });
